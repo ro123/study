@@ -21,6 +21,7 @@ def assign_side():
             print("Player2 you will play X")
 
 def display_board(board):
+    clear_output
     print(f" {board[7]} | {board[8]} | {board[9]} ")
     print(f"___|___|___")
     print(f" {board[4]} | {board[5]} | {board[6]} ")
@@ -69,49 +70,56 @@ def regame():
 
 Game_on = True
 while Game_on == True:
+    
     boardlst = ["#"," "," "," "," "," "," "," "," "," "]
     assign_side()
     defineturn()
     checking(mark1,boardlst)
     checking(mark2,boardlst)
+    
     if defineturn() == "Player1":
-        while checking(mark1,boardlst) == "Continue" and checking(mark2,boardlst) == "Continue":
         
-            clear_output()
+        while checking(mark1,boardlst) == "Continue" and checking(mark2,boardlst) == "Continue":
+            
             display_board(boardlst)
             print('Player1 turn')
             addposition(mark1,boardlst)
+            
             if checking(mark1,boardlst) == "Continue":
-                clear_output()
                 display_board(boardlst)
                 print('Player2 turn')
                 addposition(mark2,boardlst)
+    
     elif defineturn() == "Player2":            
+        
         while checking(mark1,boardlst) == "Continue" and checking(mark2,boardlst) == "Continue":
             
-            clear_output()
             display_board(boardlst)
             print('Player2 turn')
             addposition(mark2,boardlst)
             
             if checking(mark2,boardlst) == "Continue":
-                clear_output()
                 display_board(boardlst)
                 print('Player1 turn')
                 addposition(mark1,boardlst)
                 
     if checking(mark1,boardlst) == "Win":
-        clear_output()
+        
+        display_board(boardlst)
         print("Player1 you are winner")
         regame()
         continue
+    
     elif checking(mark2,boardlst) == "Win":
-        clear_output()
+        
+        display_board(boardlst)
         print("Player2 you are winner")
         regame()
         continue
+   
     elif checking(mark1,boardlst) == "Draw" or checking(mark2,boardlst) == "Draw":
-        clear_output()
+        
+        display_board(boardlst)
         print("Draw")
         regame()
         continue
