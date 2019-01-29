@@ -21,7 +21,7 @@ def assign_side():
             print("Player2 you will play X")
 
 def display_board(board):
-    clear_output
+    clear_output()
     print(f" {board[7]} | {board[8]} | {board[9]} ")
     print(f"___|___|___")
     print(f" {board[4]} | {board[5]} | {board[6]} ")
