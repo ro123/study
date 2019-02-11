@@ -76,7 +76,7 @@ class Account():
         self.balance = int(balance)
 
     def __str__(self):
-        return f'{self.balance}''
+        return f'{self.balance}'
 
     def __int__(self):
         return self.balance
@@ -233,7 +233,7 @@ if __name__ == '__main__':
                     break
 
         if int(purse) > 0:
-            print(f'\nYour balance: {int(purse)}$'')
+            print(f'\nYour balance: {int(purse)}$')
             gamestatus = input('Do you want to play again?  Y/N    ')
         else:
             print('\nYou lose all your money. Good luck')
